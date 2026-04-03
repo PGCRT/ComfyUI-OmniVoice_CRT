@@ -1,0 +1,237 @@
+{
+  "id": "c4edd389-bf0e-4ca1-a799-834e167a4bf4",
+  "revision": 0,
+  "last_node_id": 32,
+  "last_link_id": 58,
+  "nodes": [
+    {
+      "id": 31,
+      "type": "OmniVoiceGenerate",
+      "pos": [
+        -480,
+        -1510
+      ],
+      "size": [
+        400,
+        516
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "OMNIVOICE_PIPE",
+          "link": 56
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            57
+          ]
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "Node name for S&R": "OmniVoiceGenerate"
+      },
+      "widgets_values": [
+        "Hello from OmniVoice.",
+        "auto",
+        "none",
+        "none",
+        "none",
+        "none",
+        32,
+        2,
+        0.1,
+        5,
+        5,
+        0,
+        1,
+        1,
+        "fixed",
+        false,
+        10,
+        true
+      ]
+    },
+    {
+      "id": 16,
+      "type": "LoadAudio",
+      "pos": [
+        -1130,
+        -1510
+      ],
+      "size": [
+        282.798828125,
+        136
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.1",
+        "Node name for S&R": "LoadAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "DOJA VOICE.wav",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 22,
+      "type": "OmniVoiceLoadModel",
+      "pos": [
+        -810,
+        -1510
+      ],
+      "size": [
+        291.453125,
+        150
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "reference audio (optional)",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "transcription override",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "OMNIVOICE_PIPE",
+          "links": [
+            56
+          ]
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OmniVoiceLoadModel",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "auto",
+        "auto",
+        false,
+        "openai/whisper-large-v3-turbo"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "PreviewAudio",
+      "pos": [
+        -40,
+        -1510
+      ],
+      "size": [
+        270,
+        88
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 57
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.1",
+        "Node name for S&R": "PreviewAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [
+      56,
+      22,
+      0,
+      31,
+      0,
+      "OMNIVOICE_PIPE"
+    ],
+    [
+      57,
+      31,
+      0,
+      3,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ue_links": [],
+    "ds": {
+      "scale": 0.9090909090909091,
+      "offset": [
+        1425.7860955647345,
+        1815.2521212669692
+      ]
+    },
+    "links_added_by_ue": [],
+    "frontendVersion": "1.42.8",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
